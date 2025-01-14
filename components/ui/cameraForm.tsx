@@ -16,7 +16,7 @@ import {
     FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { modifyCameraExifData, modifyLocationData } from '@/lib/modifyExif';
+import { modifyCameraExifData } from '@/lib/modifyExif';
 import downloadImage from '@/lib/downloadImage';
 import fileNameExtract from '@/lib/fileNameExtract';
 

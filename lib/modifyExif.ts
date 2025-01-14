@@ -1,11 +1,11 @@
 import piexifjs from 'piexifjs';
 
 function modifyCameraExifData(imageData: string, make: string, model: string) {
-    let exifData = piexifjs.load(imageData);
+    const exifData = piexifjs.load(imageData);
     exifData['0th'][piexifjs.ImageIFD.Make] = make;
     exifData['0th'][piexifjs.ImageIFD.Model] = model;
-    let exifbytes = piexifjs.dump(exifData);
-    let modifiedImage = piexifjs.insert(exifbytes, imageData);
+    const exifbytes = piexifjs.dump(exifData);
+    const modifiedImage = piexifjs.insert(exifbytes, imageData);
     return modifiedImage;
 }
 
@@ -30,7 +30,7 @@ function modifyLocationData(
         };
     };
 
-    let exifData = piexifjs.load(imageData);
+    const exifData = piexifjs.load(imageData);
     const gpsInfo = extractGpsInfo([latitude, longitude]);
     exifData.GPS[piexifjs.GPSIFD.GPSLatitudeRef] = gpsInfo.latitudeRef;
     exifData.GPS[piexifjs.GPSIFD.GPSLatitude] =
@@ -39,8 +39,8 @@ function modifyLocationData(
     exifData.GPS[piexifjs.GPSIFD.GPSLongitude] =
         piexifjs.GPSHelper.degToDmsRational(gpsInfo.longitude);
     exifData.GPS[piexifjs.GPSIFD.GPSAltitude] = altitude;
-    let exifbytes = piexifjs.dump(exifData);
-    let modifiedImage = piexifjs.insert(exifbytes, imageData);
+    const exifbytes = piexifjs.dump(exifData);
+    const modifiedImage = piexifjs.insert(exifbytes, imageData);
     return modifiedImage;
 }
 
@@ -49,11 +49,11 @@ function modifyDateTimeData(
     dateTimeOriginal: string,
     createDate: string
 ) {
-    let exifData = piexifjs.load(imageData);
+    const exifData = piexifjs.load(imageData);
     exifData['Exif'][piexifjs.ExifIFD.DateTimeOriginal] = dateTimeOriginal;
     exifData['Exif'][piexifjs.ExifIFD.DateTimeDigitized] = createDate;
-    let exifbytes = piexifjs.dump(exifData);
-    let modifiedImage = piexifjs.insert(exifbytes, imageData);
+    const exifbytes = piexifjs.dump(exifData);
+    const modifiedImage = piexifjs.insert(exifbytes, imageData);
     return modifiedImage;
 }
 

@@ -13,7 +13,6 @@ export default function ImageForm() {
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {
             const files = Array.from(e.target.files);
-            const arrayOfFiles: string[] = [];
             const readFilesPromises = files.map((file) => {
                 return new Promise<string>((resolve, reject) => {
                     const reader = new FileReader();
