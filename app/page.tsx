@@ -1,7 +1,14 @@
 import ImageForm from '@/components/ui/imageForm';
 import { Logo } from '@/components/ui/logo';
 import { ModeToggle } from '@/components/ui/mode-toggle';
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+    alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_BASE_URL}`,
+    },
+};
 
 export default function Home() {
     return (
