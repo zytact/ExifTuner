@@ -32,3 +32,66 @@ ExifTuner is a web application for viewing and manipulating EXIF metadata in you
 git clone https://github.com/zytact/ExifTuner.git
 cd ExifTuner
 ```
+
+2. Install dependencies:
+
+```bash
+pnpm install
+```
+
+3. Run the development server:
+
+```bash
+pnpm dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+### Building for Production
+
+To build the application for production:
+
+```bash
+pnpm build
+pnpm start
+```
+
+### Development
+
+#### Code Style
+
+This project uses ESLint and Prettier for code formatting:
+
+```bash
+# Run linter
+pnpm lint
+
+#Format code
+pnpm format
+```
+
+#### Project Structure
+
+- app - Next.js app router pages and layouts
+- components - React components
+- hooks - Custom React hooks
+- lib - Utility functions and shared code
+- public - Static assets
+
+### Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository.
+2. Create your feature branch (git checkout -b feature/amazing-feature)
+3. Commit your changes (git commit -m 'Add some amazing feature')
+4. Push to the branch (git push origin feature/amazing-feature)
+5. Open a Pull Request
+
+### License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+### Acknowledgements
+
+- [piexifjs](https://github.com/hMatoba/piexifjs) for EXIF manipulation
