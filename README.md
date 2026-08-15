@@ -21,7 +21,7 @@ ExifTuner is a web application for viewing and manipulating EXIF metadata in you
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or newer)
+- [Node.js](https://nodejs.org/) 24
 - [pnpm](https://pnpm.io/) (recommended) or npm or yarn
 
 ### Installation
